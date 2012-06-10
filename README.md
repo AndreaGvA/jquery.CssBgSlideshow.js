@@ -1,6 +1,8 @@
 jquery.CssBgSlideshow.js
 ========================
 
+Demo: [CssBgSlideshow](http://www.smartgap.it/repos/cssBGslideshow/index.html)
+
 Usage:
 ```javascript
 $(document).ready(function() {
