@@ -14,8 +14,8 @@ jQuery.fn.bgSlideshow = function(options) {
 		fadeSpeed: 1000,
 		transition: 'fade', // if different needs jquery UI Effects
 		navigation: true,
-		navPlay: 'img/btn_play.png',
-		navStop: 'img/btn_pause.png',
+		navPlay: 'images/btn_play.png',
+		navStop: 'images/btn_pause.png',
 		title: true,
 		linkUrl:true,
 		text: true,
@@ -141,7 +141,7 @@ jQuery.fn.bgSlideshow = function(options) {
 					setTimeout(function() {
 						if(o.title==true) {
 							if(o.linkUrl==true) {
-								$("#slideTitle").html('<a href="' + photoObject.url + '">' + photoObject.title + '</a>');
+								$("#slideTitle").html('<a href="' + photoObject.url + '" target="_blank">' + photoObject.title + '</a>');
 							} else {
 								$("#slideTitle").html(photoObject.title);
 							}
@@ -159,7 +159,7 @@ jQuery.fn.bgSlideshow = function(options) {
 					setTimeout(function() {
 						if(o.title==true) {
 							if(o.linkUrl==true) {
-								$("#slideTitle").html('<a href="' + photoObject.url + '">' + photoObject.title + '</a>');
+								$("#slideTitle").html('<a href="' + photoObject.url + '" target="_blank">' + photoObject.title + '</a>');
 							} else {
 								$("#slideTitle").html(photoObject.title);
 							}
@@ -173,7 +173,7 @@ jQuery.fn.bgSlideshow = function(options) {
 					});
 				});
 			}
-		};
+		}; 
 		
 		var stopAnimation = function() {
 			// Change the background image to "play"
@@ -195,3 +195,4 @@ jQuery.fn.bgSlideshow = function(options) {
 	};
 
 })(jQuery)
+
