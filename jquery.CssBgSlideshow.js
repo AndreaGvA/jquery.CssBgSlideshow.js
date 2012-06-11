@@ -117,7 +117,7 @@ jQuery.fn.bgSlideshow = function(options) {
 			
 			// Set the background image of the new active container
 			$('#headerimg' + activeContainer).css({
-				"background-image" : "url(" + photoObject.image + ")",
+				"background" : "url(" + photoObject.image + ") center center",
 				"display" : "block",
 				"z-index" : currentZindex,
 			});
