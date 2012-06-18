@@ -16,6 +16,7 @@ jQuery.fn.bgSlideshow = function(options) {
 		navigation: true,
 		navPlay: 'images/btn_play.png',
 		navStop: 'images/btn_pause.png',
+		pagin: true,
 		title: true,
 		linkUrl:true,
 		text: true,
@@ -37,6 +38,10 @@ jQuery.fn.bgSlideshow = function(options) {
 		if(o.navigation==true) {
 			e.append("<div id='slideNav'><div id='slideBack' class='slideButton'></div><div id='slideToggle' class='slideButton'></div><div id='slideNext' class='slideButton'></div></div>");
 		}
+         	if(o.pagin==true)
+                {
+                        e.append('<div id="slidePagin"></div>');
+                }
 		if(o.title==true)
 		{
 			e.append('<div id="slideTitle"></div>');	
@@ -104,12 +109,13 @@ jQuery.fn.bgSlideshow = function(options) {
 			} else {
 				activeContainer = 1;
 			}
-			showImage(o.photos[currentImg - 1], currentContainer, activeContainer);
+			var totImg=o.photos.length;
+			showImage(o.photos[currentImg - 1], currentContainer, activeContainer, currentImg, totImg);
 			
 		};
 		
 		var currentZindex = -1;
-		var showImage = function(photoObject, currentContainer, activeContainer) {
+		var showImage = function(photoObject, currentContainer, activeContainer, currentImg="", totImg="") {
 			animating = true;
 			
 			// Make sure the new container is always on the background
@@ -125,7 +131,11 @@ jQuery.fn.bgSlideshow = function(options) {
 			if(o.backgroundCover==true) {
 				$('#headerimg' + activeContainer).css( "background-size", "cover" );
 			}
-			
+			if(o.pagin==true)
+	                {
+                	        jQuery('#slidePagin').html(currentImg ' di '+ totImg);
+        	        }
+	
 			// Hide the header text
 			if(o.title==true) {
 				$("#slideTitle").fadeOut(o.fadeSpeed);
