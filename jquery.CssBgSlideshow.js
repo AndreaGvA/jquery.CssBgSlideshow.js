@@ -115,7 +115,7 @@ jQuery.fn.bgSlideshow = function(options) {
 		};
 		
 		var currentZindex = -1;
-		var showImage = function(photoObject, currentContainer, activeContainer, currentImg="", totImg="") {
+		var showImage = function(photoObject, currentContainer, activeContainer, currentImg, totImg) {
 			animating = true;
 			
 			// Make sure the new container is always on the background
@@ -133,7 +133,7 @@ jQuery.fn.bgSlideshow = function(options) {
 			}
 			if(o.pagin==true)
 	                {
-                	        jQuery('#slidePagin').html(currentImg ' di '+ totImg);
+                	        jQuery('#slidePagin').html(currentImg +' di '+ totImg);
         	        }
 	
 			// Hide the header text
